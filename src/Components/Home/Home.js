@@ -19,8 +19,10 @@ const Home = () => {
                 </Container>
             </section>
             <section>
-                <h2>Customer Reviews</h2>
-                <Button>See All Reviews</Button>
+                <Container>
+                    <h2>Customer Reviews</h2>
+                    <Button>See All Reviews</Button>
+                </Container>
             </section>
         </div>
     );
