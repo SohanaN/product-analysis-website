@@ -1,11 +1,12 @@
 import React from 'react';
+import Barchart from '../Barchart/Barchart';
 
 const Dashboard = () => {
-    return (
-        <div>
-            <h2>Dashboard Page</h2>
-        </div>
-    );
+  return (
+    <div>
+      <Barchart />
+    </div>
+  );
 };
 
 export default Dashboard;

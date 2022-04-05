@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 const useReviewFunction = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('CustomerReviews.json')
+        fetch('customerReviewsData.json')
             .then(res => res.json())
             .then(data => setReviews(data));
     }, []);
