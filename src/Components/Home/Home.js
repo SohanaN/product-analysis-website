@@ -22,6 +22,9 @@ const Home = () => {
             </section>
             <section>
                 <Container>
+                    <Row>
+                        <h2>Customer Reviews </h2>
+                    </Row>
                     <Row className="d-flex justify-content-center mt-4">
                         {
                             reviews.slice(0, 3).map(review => <Review key={review.id} review={review}></Review>)
