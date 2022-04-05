@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Image, Row } from 'react-bootstrap';
-import Review from '../Review/Review';
-
+import { Link } from 'react-router-dom';
+import Reviews from '../Reviews/Reviews';
+import useReviewFunction from '../../hooks/useReviewFunction';
 const Home = () => {
-    const [reviews, setReviews] = useState([]);
-    useEffect(() => {
-        fetch('CustomerReviews.json')
-            .then(res => res.json())
-            .then(data => setReviews(data));
-    }, [])
+    const [reviews, setReviews] = useReviewFunction();
     return (
         <div>
             <section>
@@ -30,10 +25,9 @@ const Home = () => {
                     <Row>
                         <h2>Customer Reviews <small>({reviews.length})</small></h2>
                     </Row>
-                    <Row className="d-flex justify-content-center">
-                        {
-                            reviews.map(review => <Review key={review.id} review={review}></Review>)
-                        }
+                    <Row className="d-flex justify-content-center mt-4">
+                        <Reviews></Reviews>
+                        <Link className='show-details-btn m-4' to={'/reviews'}>See All Reviews</Link>
                     </Row>
                 </Container>
             </section>
