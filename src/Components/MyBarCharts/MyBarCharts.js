@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Bar, BarChart, XAxis, YAxis, Tooltip } from 'recharts';
-const Barchart = () => {
+import { Bar, BarChart, Tooltip, XAxis, YAxis } from 'recharts';
+
+const MyBarCharts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
         fetch('chartData.json')
@@ -13,7 +14,7 @@ const Barchart = () => {
             })
     }, [])
     return (
-        <BarChart width={800} height={400} data={products}>
+        <BarChart width={600} height={400} data={products}>
             <Bar dataKey="revenue" fill="#8884d8" />
             <XAxis dataKey="month"></XAxis>
             <Tooltip />
@@ -22,4 +23,4 @@ const Barchart = () => {
     );
 };
 
-export default Barchart;
+export default MyBarCharts;
