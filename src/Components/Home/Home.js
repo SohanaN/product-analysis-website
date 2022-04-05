@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Image, Row } from 'react-bootstrap';
+import Review from '../Review/Review';
 
 const Home = () => {
+    const [reviews, setReviews] = useState([]);
+    useEffect(() => {
+        fetch('CustomerReviews.json')
+            .then(res => res.json())
+            .then(data => setReviews(data));
+    }, [])
     return (
         <div>
             <section>
@@ -20,8 +27,14 @@ const Home = () => {
             </section>
             <section>
                 <Container>
-                    <h2>Customer Reviews</h2>
-                    <Button>See All Reviews</Button>
+                    <Row>
+                        <h2>Customer Reviews <small>({reviews.length})</small></h2>
+                    </Row>
+                    <Row className="d-flex justify-content-center">
+                        {
+                            reviews.map(review => <Review key={review.id} review={review}></Review>)
+                        }
+                    </Row>
                 </Container>
             </section>
         </div>
