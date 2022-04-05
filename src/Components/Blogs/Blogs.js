@@ -7,7 +7,7 @@ const Blogs = () => {
             <Container>
                 <Row>
                     <h2>
-                        <strong>Qn: 1</strong>
+                        <strong>Qn: 1 </strong>
                         What is Context API ?
                     </h2>
                     <p>
@@ -17,7 +17,7 @@ const Blogs = () => {
                 </Row>
                 <Row>
                     <h2>
-                        <strong>Qn: 2</strong>
+                        <strong>Qn: 2 </strong>
                         What is Semantic tag?
                     </h2>
                     <p>

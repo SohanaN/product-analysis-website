@@ -10,7 +10,6 @@ const MyLineCharts = () => {
                 const loadedData = data.data;
                 const productData = loadedData.map(product => product)
                 setProducts(productData);
-                console.log(productData);
             })
     }, [])
     return (

@@ -1,7 +1,7 @@
 import { Button, Col, Container, Image, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Reviews from '../Reviews/Reviews';
 import useReviewFunction from '../../hooks/useReviewFunction';
+import Review from '../Review/Review';
 const Home = () => {
     const [reviews, setReviews] = useReviewFunction();
     return (
@@ -22,11 +22,10 @@ const Home = () => {
             </section>
             <section>
                 <Container>
-                    <Row>
-                        <h2>Customer Reviews <small>({reviews.length})</small></h2>
-                    </Row>
                     <Row className="d-flex justify-content-center mt-4">
-                        <Reviews></Reviews>
+                        {
+                            reviews.slice(0, 3).map(review => <Review key={review.id} review={review}></Review>)
+                        }
                         <Link className='show-details-btn m-4' to={'/reviews'}>See All Reviews</Link>
                     </Row>
                 </Container>
