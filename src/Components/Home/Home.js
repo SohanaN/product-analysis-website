@@ -23,7 +23,7 @@ const Home = () => {
             <section>
                 <Container>
                     <Row>
-                        <h2>Customer Reviews </h2>
+                        <h2>Customer Reviews <small>({reviews.slice(0, 3).length})</small></h2>
                     </Row>
                     <Row className="d-flex justify-content-center mt-4">
                         {
